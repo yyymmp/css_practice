@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+<!--    父组件监听子组件发送的事件 itemclick
+在父组件的处理中cpnclick处理-->
+    <cpn v-on:itemclick="cpnclick"></cpn>
+</div>
+</body>
+<template id = cpn>
+    <div>
+        <button @click="btnclick(item)" v-for="item in categroies">{{item.name}}</button>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    //子组件
+    const  cpn = {
+        template: '#cpn'
+        ,data(){
+            return{
+                categroies:[
+                    {
+                        id: 'aa',
+                        name: '手机'
+                    },
+                    {
+                        id: 'bb',
+                        name: '电脑'
+                    },
+                    {
+                        id: 'cc',
+                        name: '球鞋'
+                    },
+                ]
+            }
+        }
+        ,methods:{
+            btnclick(item) {
+                console.log("子组件"+item.id)
+                //发送事件 给父组件传递数据
+                this.$emit('itemclick',item)
+            }
+        }
+    }
+    //父组件
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好"
+            ,info:{
+                name:'jia'
+                ,age:18
+            }
+        }
+        ,components:{
+            cpn
+        }
+        ,methods: {
+            cpnclick(item){
+                console.log("父组件")
+                console.log(item)
+            }
+        }
+    })
+
+</script>
+</html>

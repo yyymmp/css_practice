@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <cpn :cmoives="moives" :cmessage="message"></cpn>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<template id="cpn">
+    <div>
+        <div>
+            <p>{{cmoives}}</p>
+            <p>{{cmessage}}</p>
+        </div>
+    </div>
+</template>
+<script>
+    //父传子 props
+    const  cpn = {
+        template:'#cpn'
+        // ,props:['cmoives','cmessage']
+        //另一种写法 可以限定类型  可以提供默认值
+        ,props:{
+            cmoives:Array,
+            cmessage:{
+                type:String,
+                default: '默认aa'
+            }
+        }
+    }
+    const app = new Vue({
+        el: "#app",
+        data: {
+            // message: "你好"
+            // ,moives:['a','a','b','d']
+        }
+        //往app中注册子组件
+        ,components:{
+            cpn,
+        }
+    })
+</script>
+</html>

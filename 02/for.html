@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .active{
+        background: red;
+    }
+</style>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in names">{{index}}{{item}}</li>
+    </ul>
+
+    <ul>
+<!--        直接获取值-->
+<!--        <li v-for="item in info">{{item}}</li>-->
+<!--        获取对象的key和value-->
+<!--        <li v-for="(value,key) in info">{{value}}&#45;&#45;{{key}}</li>-->
+<!--        获取对象的key,value,index,一般对象不过去index-->
+<!--        <li v-for="(value,key,index) in info">{{value}}&#45;&#45;{{key}}&#45;&#45;{{index}}</li>-->
+
+        <li v-for="(item,index) in letters"
+            :class="{active:index === currentIndex}"
+            @click="click(index)">{{item}}
+        </li>
+    </ul>
+    <button @click="btnclick">按钮</button>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好"
+            ,names:['why','kobe','james','curry']
+            ,letters:['why','kobe','james','curry']
+            ,info:{
+                name: 'jia',
+                age: 19,
+                height: 1.88
+            }
+            ,currentIndex:0
+
+        },
+        methods:{
+            btnclick(){
+                //数组响应式方法
+                // this.letters.push('a');
+                // this.letters.pop();
+                // this.letters.shift();
+                // this.letters.unshift('aaa');
+                //删除.插入,替换元素
+                this.letters.splice()
+            }
+            ,click(index){
+                this.currentIndex = index;
+            }
+        }
+
+    })
+</script>
+</html>

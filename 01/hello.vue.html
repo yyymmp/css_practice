@@ -1,0 +1,37 @@
+<template>
+  <div class="page">
+
+  </div>
+</template>
+<div id = "app">  {{num}}
+<h1>{{uname}}</h1>
+</div>
+
+<!-- <script src="../js/vue.js"></script> -->
+
+<script >
+    // <!-- //let  定义变量 -->
+    // <!-- //const //定义常量 -->
+    // const app = new  Vue({
+    //     el: "#app", //挂载元素
+    //     data:{
+    //         message: "你好,world",
+    //         aaa:"你是谁"
+    //     }
+    // })
+    
+    const Counter = {
+        data:function(){
+            return {
+                num:0,
+                uname:"张三"
+            }
+        }
+    }
+    Vue.createApp(Counter).mount("app");
+
+    
+</script>
+
+<style scoped lang="stylus">
+</style>

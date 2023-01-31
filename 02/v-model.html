@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message">
+
+    <label for="">
+        <input type="radio" id="male" value="男" v-model="sex"> 男
+        <input type="radio" id="female"  value="女" v-model="sex">  女
+    </label>
+    <h2>{{sex}}</h2>
+
+    <label for="">
+        <input type="checkbox" id="agree" v-model="isAgree">
+        同意协议
+    </label>
+    <h2>{{isAgree}}</h2>
+    <button :disabled="!isAgree">下一步</button>
+
+    <label for="">
+        <input type="checkbox" value="篮球" v-model="hobbies"> 篮球
+        <input type="checkbox" value="足球"  v-model="hobbies"> 足球
+        <input type="checkbox" value="pingpong球"  v-model="hobbies"> 乒乒球
+
+        <h2>你的爱好时:{{hobbies}}</h2>
+    </label>
+
+    <div>
+        <select name="abc" id="" v-model="fruit">
+            <option value="苹果" >苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="葡萄">葡萄</option>
+            <option value="西瓜">西瓜</option>
+        </select>
+        <h2>{{fruit}}</h2>
+    </div>
+
+
+    <label v-for="item in oriHobbies">
+        <input type="checkbox" :value="item" v-model="hobbies"> {{item}}
+    </label>
+    <h2>你的爱好时:{{hobbies}}</h2>
+
+    <label for="">
+        <input type="text" v-model.lazy="message">
+        <h2>{{message}}</h2>
+
+        <input type="number" v-model.number="age">
+        <h2>{{typeof age }}</h2>
+
+        <input type="text" v-model="name">
+        <h2>{{name}}</h2>
+    </label>
+
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好"
+            ,sex: '男'
+            ,isAgree: false
+            ,oriHobbies:['篮球','足球','乒乒球']
+            ,hobbies:[]
+            ,fruit:'西瓜'
+            ,age:''
+            ,name:'   ssaa  '
+        }
+    })
+</script>
+</html>

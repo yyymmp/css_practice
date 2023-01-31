@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">{{message}}
+        <h2 :style="{}"> {{message}}} </h2>
+        <h2 :style="{fontSize:fontSize +'px' ,color:color}"> {{message}}} </h2>
+
+        <h2 :style=[s1,s2] >aaa</h2>
+
+        <h2>{{fullName}}</h2>
+
+        <h2>总价格:{{total}}</h2>
+    </div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            name: "kobe",
+            fontSize: 100,
+            color: 'red',
+            s1:{color:"red"},
+            s2:{fontSize:'100px'},
+
+            books:[
+                {id:110,name:"unix",price:119},
+                {id:111,name:"java",price:160},
+                {id:112,name:"php",price:119},
+                {id:113,name:"c#",price:215},
+            ],
+        },
+        //计算属性
+        computed: {
+            fullName:function(){
+                return this.message + ' '+this.name;
+            },
+            total:function(){
+                let total = 0;
+                for(let i = 0 ;i<this.books.length;i++){
+                     total += this.books[i].price;
+                }
+                return  total;
+            }
+        }
+
+    })
+
+</script>
+</html>

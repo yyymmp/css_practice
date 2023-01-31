@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{counter}}</h2>
+    <button v-on:click="incre">+</button>
+    <button v-on:click="de">-</button>
+<!--    语法糖-->
+    <button @click="incre">+</button>
+
+    <button @click="click2">按钮传递</button>
+    <button @click="click3('jia',$event)">按钮传递</button>
+
+    <div @click="divClick">
+        <button @click="bthClick">
+            传递
+        </button>
+    </div>
+
+    <input type="text" @keyup.enter="keyup">
+
+    <button @click.once="once"></button>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            counter: 0
+        },
+        methods:{
+            incre(){
+                this.counter++;
+            },
+            de(){
+                this.counter--;
+            },
+            //默认会将浏览器产生的事件对象传入
+            click2(event){
+                console.log('-----------',event);
+            },
+            click3(abc,event){
+                console.log(abc);
+                console.log(event);
+            },
+            divClick(){
+                console.log("111")
+            },
+            bthClick(){
+                console.log("222")
+            },
+            keyup(){
+                console.log("keyup")
+            },
+            once(){
+                console.log("只使用一次");
+            }
+        }
+    })
+
+</script>
+</html>

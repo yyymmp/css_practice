@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+            /* =============文字样式 */
+            /* 大小 */
+            font-size: 20px;
+            /* 加粗 */
+            font-weight: bold;
+            /* 样式  倾斜*/
+            font-style:oblique;
+            /* 字体 */
+            font-family: 楷体;
+            /* 复合属性 空格隔开 */
+            font: italic 700 66px 宋体;
+            /* =============文字样式 */
+
+            /* =============文本样式 */
+
+            /* 缩进 */
+            text-indent: 50px; /*按像素缩进*/
+            text-indent:2em;    /*按字大小缩进 一个em即一个字大小*/
+
+            /* 文本水平对齐方式  left right center
+            如果想让以上元素(文本 span a标签 input img)居中,则需要给以上元素的父元素设置*/
+            text-align: center;
+
+            /* 文本修饰线 */
+            text-decoration: underline;
+
+            /* 行高 两行文字之间的距离 */
+            line-height: 50px;/*固定间距*/
+            line-height: 1.5;/*自己字号的1.5倍大小*/
+            /* =============文本样式 */
+
+
+        }
+        div{
+            text-align: center;
+        }
+        #box{
+            width: 500px;
+            height: 600px;
+            background-color: pink;
+            /* 如何让标签居中  上下是0 左右自动居中*/
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    
+
+    <p>1.各项电子服务的所有权和运作权归中国移动通信集团公司；
+
+        2.用户提供详尽、准确的个人资料；
+        
+        3.中国移动通信投诉中心不公开用户的姓名、地址、电子邮箱和笔名；
+        
+        4.中国移动通信投诉中心保留删除恶意投诉工单的权利；
+        
+        5.用户个人对网络服务的使用承担风险；
+        
+        6.用户须承诺不传输任何非法的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽的等信息资料；</p>
+    <!-- 需要给div设置居中 span居中才能生效 -->
+    <div>
+        <span>宽带安装结果：2021年7月9日，我宽带安装结果：2021年7月9日，我宽带安装结果：2021年7月9日，我</span>
+    </div>
+
+    <div id="box"></div>
+    
+</body>
+</html>

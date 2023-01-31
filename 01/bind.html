@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        {{message}}
+    </div>
+    <div id = "app">
+        <!-- 错误做法 只有content可以使用{{}}语法  属性这里无法解析 -->
+            <!-- <img src="{{imgUrl}}" alt=""> -->
+        <!-- 哪个需要动态解析,v-bind就放在哪个属性的前面 -->
+            <img v-bind:src="imgUrl" alt="">
+            <img :src="imgUrl" alt="">
+    </div>
+    
+
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "你好",
+            imgUrl: "https://upload-images.jianshu.io/upload_images/5809200-a99419bb94924e6d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+        }
+    })
+
+</script>
+</html>
