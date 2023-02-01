@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /* 标签默认颜色是透明 */
+            width: 900px;
+            height: 700px;
+            background-color: pink;
+            /* 背景图 */
+            background-image: url("../img/1.jpg");
+            /* 背景平铺  
+            设置平铺方式: repeat 水平和垂直方向都平铺
+            no-repeat:不平铺
+            repeat-x:沿x方向平铺
+            repeat-y:沿y方向平铺
+            */
+            background-repeat: no-repeat;
+            /* 背景图位置 
+            1：使用单词
+            right 0 : 右上角
+            right bottom：右下角
+            center center:居中
+            2：使用像素 向左移动50px  向右移动60px
+            background-position:  50px 60px
+            */
+            background-position:  center center;
+
+            /* img标签和背景图片的区别 
+            背景图片需要依赖外部盒子的宽高，自己无法撑开盒子宽高
+            */
+
+            /* 行内标签 不可以设置宽高 宽高由内容撑开  span u */
+            
+        }
+        /* 行内块 一行可以显示多个 且可以设置宽高  input textarea img button select*/
+        input{
+                width: 20px;
+                height: 40px;
+        }
+        /* 显示模式转换 */
+        span{
+            /* 转为块 */
+            display: block;
+            /* 转为行内块 */
+            display: inline-block;
+        }
+        /* css继承属性 子元素默认继承父元素样式的特点 
+        可以继承的常见属性： 文字文本控制属性都可以继承 */
+    </style>
+</head>
+<body>
+<div>
+    文字 
+</div>
+  
+<span>span</span>
+<span>span</span>
+<a href="">你好</a>
+<input type="text">
+</body>
+</html>
