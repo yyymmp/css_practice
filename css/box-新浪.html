@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 针对内边距 边框会撑大盒子 如何保证盒子不被撑大
+        1：提前计算 手动在内容中减去多出来的大小
+        2：自动内减 给盒子设置属性box-sizing:border-box 浏览器会自动计并减去
+         */
+        div{
+            /* width: 100%; */
+            height: 40px;
+            border-top: 3px solid yellow;
+            border-bottom: 1px solid #edeef0;
+            /* background-color: pink; */
+        }
+        a{
+            display: inline-block;
+            text-decoration: none;
+            /* 不限定宽度 根据内容撑开 再使用内边距隔开 */
+            /* width: 80px; */
+            padding-left: 16px;
+            padding-right: 16px;
+            height: 40px;
+            color: black;
+            line-height: 40px;
+            text-align: center;
+            font-size: 12px;
+        }
+        a:hover{
+            color: yellow;
+            background: #EDEEF0;
+        }
+        .boxsizing{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            border: 10px solid #000;
+            /* 内减模式  */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">新航</a>
+        <a href="#">新浪导航新浪导航</a>
+        <a href="#">新浪导</a>
+        <a href="#">航</a>
+    </div>
+
+    <div class="boxsizing">
+        文字
+    </div>
+</body>
+</html>
