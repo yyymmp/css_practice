@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css书写顺序
+        1 浮动/display
+        2 盒子模型相关属性 
+        3 文字样式
+        */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .nav{
+            height: 40px;
+            background-color: #333333;
+        }
+        .center{
+            width: 1226px;
+            height: 560px;
+            margin: 0 auto;
+            /* border: 1px solid black; */
+            background-color: aquamarine;
+        }
+        .pink{
+            width: 1226px;
+            height: 100px;
+            background-color: #ffc0cb;
+        }
+        .left{
+            width: 234px;
+            height: 460px;
+            background-color: #ffa500;
+            float: left;
+        }
+        .right{
+            width: 992px;
+            height: 460px;
+            background-color: #87ceeb;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+    </div>
+    <div class="center">
+            <div class="pink"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+    </div>
+
+
+
+</body>
+</html>

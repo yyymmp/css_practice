@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        结构伪类选择器: 根据元素之间的关系查找元素 减少对类的依赖 常用于某父级选择器中的子元素
+        E:first-child 匹配父元素的第一个子元素
+        E:last-child 匹配父元素的最后一个子元素
+        E:nth-child 匹配父元素的任意一个元素,nth可以设置函数 如2n 偶数 2n+1  奇数
+        */
+
+        /* 
+        伪元素:由css模拟出的标签效果,用于网页中不重要的装饰
+        ::before:在父元素内容的最前添加一个伪元素
+        ::after: 在父元素内容的最后添加一个伪元素
+        */
+
+        /* 
+        认识标准流: 常见排版规则 块级元素 从上往下 独占一行 
+        行内元素或行内块元素 从左往右 水平布局 空间不够自动拆行
+        */
+
+        /* 
+            行内块的问题: 行内块会由于代码本身的换行 会导致浏览器渲染时让行内块有一个外边距
+            解决: 无需转成行内块,直接使用浮动,也可以让两个块级元素排列在一行
+        */
+        /* 浮动: 为了块标签在一行很完美的排列(网页布局))(类似块标签效果并且无额外间距) */
+        /* 
+        浮动元素的特点: 
+        1 浮动元素会脱离标准流,在标准流中不占位置,相当于该元素位置是空白的,被后面元素占用
+        但内容还需要排在浮动元素后面
+        2 浮动元素比标准流高半个级别 可以盖上标准流中的元素
+        3 下一个浮动元素会在上一个浮动元素左右浮动
+        浮动后的块标签具备行内块特点,可设置宽高 但不能通过text-align:center 和margin:0  auto居中
+        盒子无法水平居中
+        */
+
+        /* 
+        清除浮动的影响: 如果子元素浮动了,此时子元素不能撑开标准流的块级父元素
+        原因:子元素浮动后脱标,不占位置
+        目的:需要父元素有高度 从而不影响其他元素的高度
+        即父子标签 父没有高度 但是子元素浮动脱离标准流之后 父元素会被顶替
+        解决方法:
+        1 直接设置父元素高度 简单方便,但有些布局中不可以固定父元素高度
+        2 额外标签法 在父元素内容的最后添加一个块级元素 是个照顾clear:both
+        3 单伪元素清除法,用伪元素替代了额外标签,在内容最后加一个标签
+        E::after{
+            因为伪元素添加的标签是行内的 所以这里声明为块元素
+            display:block;
+            clear: both;
+            content:""
+        }
+        4 双伪元素清楚法 
+        5 使用overflow:直接给父元素设置overflow:hidden  常用***
+        */
+        
+
+        li:first-child{
+            background-color: aquamarine;
+            width: 90px;
+            height: 90px;
+        }
+        li:nth-child(2){
+            background-color: pink;
+        }
+        li:nth-child(2n){
+            background-color: pink;
+        }
+        
+        .f{
+            width: 400px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+        .f::before{
+            content: "老鼠";
+            color: red;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-color: yellow;
+        }
+        .f::after{
+            content: "大米";
+        }
+        .one{
+            width: 50px;
+            height: 60px;
+            background-color: thistle;
+
+            float: left;
+        }
+        .two{
+            width: 20px;
+            height: 70px;
+            background-color: red;
+
+            /* float: left; */
+        }
+        .three{
+            width: 80px;
+            height: 30px;
+            background-color: orange; 
+        }
+        .top{
+            height: 100px;
+            background-color: black;
+        }
+        .left{
+            width: 80px;
+            height: 30px; 
+            background-color: orange; 
+            /* float: left; */
+        }
+        .right{
+            /* float: right; */
+            width: 80px;
+            height: 30px; 
+            background-color: blue; 
+        }
+
+        .clearfix{
+            clear: both;
+        }
+    </style>
+</head>
+<body> 
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>33</li>
+        <li>44</li>
+        <li>55</li>
+    </ul>
+    <div class="f">爱</div>
+
+    <div class="one">one</div>
+    <div class="two">two</div>
+    <div class="three">three</div>
+
+    <divc class="top">
+        <div class="left"></div>
+        <div class="right"></div>
+        <!-- 父级标签的内容最后加一个额外标签发 -->
+        <div class="clearfix"></div>
+    </div>
+    <div class="buttom"></div>
+</body>
+</html>
