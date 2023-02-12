@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 定位使用场景: 有元素重叠
+        因为标准流和浮动要么是上下 要么是左右 无法实现元素重叠
+        相对:相对自己之前的位置进行移动 在页面中占位置 不脱标
+        绝对: 
+        固定:
+        */
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            /* 相对定位:占有原来的位置 仍然具有标签原有的显示模式特点 */
+            /* position: relative;
+            left: 200px;
+            top: 300px; */
+
+            /* 绝对定位:相对于非静态的父元素进行定位 
+            先找已经定位的父级 如果有这样的父级 就以这个父级为参照物进行定位
+            如果没有定位的父级,此时已浏览器的窗口为参照进行定位
+            1 脱标,不占位置
+            2 改变标签的原有显示特点(具备行内块特点) 
+            */
+            /* position: absolute;
+            left: 100px;
+            top: 20px; 
+            一般情况下 都是参照父级定位进行定位  所以我们使用父级使用相对定位 子级使用绝对定位
+            在绝对定位查找父级时, 就近逐层查找 如果全部没有 则以浏览器窗口为定位
+            */
+
+        }
+        .f{
+            width: 400px;
+            height: 400px;
+            background-color: pink;        
+        }
+        .son{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;       
+            
+            /* 父级加上定位 */
+            position: absolute;
+        }
+        .sun{
+            width: 200px;
+            height: 200px;
+            background-color: green;     
+            /* 绝对定位 根据父级定位 且父级定位方式不影响子元素定位 且父级一般使用相对定位 */
+            position: absolute;
+            right: 20px;
+            top: 30px;
+        }
+        /* 
+        固定定位: 相对于浏览器进行定位移动
+        1 脱标不占位置
+        2 改变位置参考浏览器窗口
+        3 具备行内快特点
+        */
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            position: fixed;
+        }
+        /* 
+        元素层级:z-index必须配合定位才能生效
+        */
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <div class="f">
+        <div class="son">
+                <div class="sun"></div>
+        </div>
+
+    </div>
+    <p>这些朋友在Twitter、Instagram和YouTube等中国审查机构无法控制的社交媒体平台上发布了有关拘留的信息。他们从海外的行动者、学生和学者那里争取到了更广泛的支持，在这些人士的助推下，一些被拘抗议者在美国和英国的母校也站出来，呼吁释放她们。他们还创作了有关这些被拘女性的插画，并在纽约、东京等地的公共活动中展示。
+        这些人正在从零开始学习一切，他们没能从资深活动人士那里继承到经验，后者当中的许多人在过去十年里被迫流亡或保持沉默。</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* 
+            使用定位达到居中
+            */
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 以前的居中 
+            但绝对定位的盒子不可以使用margin: 0 auto;进行居中
+            */
+            /* margin: 0 auto; */
+            position: absolute;
+            /* 使用百分比偏移再配合负外边距达到定位 */
+            /* left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -150px; */
+
+            /* 
+            第二种方法: 上述使用margin-left的方法需要在代码中写死 不够灵活 使用transform
+             */
+            left: 50%;
+            top: 50%;
+            /* 位移方式: 自己的宽度 高度的一半 */
+            transform: translate(-50%,-50%); 
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    
+</body>
+</html>
