@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        基线:浏览器文字类型元素排版中存在用于对齐的基线  
+        在一些行内或者行内块场景中, 比如一张图片和一个input,是无法对齐的,因为浏览器对行内或者行内块是按照
+        文字去处理, 因为文字的基线并不是最底部的,所以都是不对齐的,所以处理大图和小字的对齐就是处理文字的对齐
+        默认是按照
+        解决:
+        top:顶部对齐
+        botto:顶部对齐
+        baseline:默认,基线对齐
+        但凡是处理行内块 文字或行内对齐 都是取vertical-align: middle; 
+        */
+        input{
+            height: 50px;
+            box-sizing: border-box;
+            vertical-align: middle; 
+        }
+        .box{
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            cursor: move;
+        }
+        /* 
+        光标类型
+        text:工字形
+        move: 四字箭头 表示可移动
+        */
+
+        /* 
+        圆角边框
+        border-raids
+        */
+        .radis{
+            width: 30px;
+            height: 30px;
+            background-color: rebeccapurple;
+            /* 四个值 从左上顺时针钻一圈 */
+            border-radius: 10px;
+            /* 花瓣 */
+            /* border-radius: 10px 80px; */
+        }
+        .yuan{
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            /* 四个值 从左上顺时针钻一圈 */
+            border-radius: 15px;
+            /* 花瓣 */
+            /* border-radius: 10px 80px; */
+        }
+
+        /* 
+        溢出部分:盒子的内容部分超出盒子范围的区域
+        控制内容溢出的显示效果,如显示 隐藏 滚动条
+        属性名:overflow
+        visible:溢出部分可见(默认)
+        hidden:隐藏溢出部分
+        scroll: 无论是否溢出显示滚动条
+        auto:溢出则显示滚动条
+        */
+        .over{
+            width: 200px;
+            height: 30px;
+            background-color: aqua;
+            overflow: auto;
+        }
+
+        /* 
+        元素隐藏:
+        visibility:不常用 因为是占位置的隐藏
+        display:none 常用 不占位置        
+        */
+        /* 
+        透明度: opacity
+        内容会一起透明  一般用的少
+        */
+        .v{
+            width: 200px;
+            height: 30px;
+            background-color: red;
+            opacity: 0.5;  
+            background-position: ;
+        }
+        /* 
+        改变背景图的位置: 改变背景图的位置
+        background-position: x y;
+        */
+        /* 
+        背景图的的大小
+        background-size: cover 覆盖,等比例缩放  直至刚好填满整个盒子没有空白
+        contain:等比例缩放,但不一定可以全部覆盖
+        cover:完美的覆盖,但是不一定图片能完全看到
+        */
+        .bg{
+            width: 200px;
+            height: 300px;
+            background-image: url("../img/1.jpg");
+            background-size: cover;
+            /* background-repeat: no-repeat; */
+        }
+        /* 
+        盒子阴影
+        */
+        .bg{
+            box-shadow: 5px 10px 20px 10px green;
+        }
+        /* 
+        使用过度来实现位移
+        让元素的样式慢慢的变化 常配合hover使用 增强网页交互体验
+        */
+        .trans{
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+            /* 1 过度属性 2 过度时间  多个属性变化使用逗号隔开*/
+            /* transition: width 1s,background-color 2s; */
+            /* 使用all更加方便 代表所有属性  */
+            transition: all 1s;
+        }
+        /* 配合hover使用 */
+        .trans:hover{
+            width: 800px;
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="button" value="搜索">
+    <div class="box"></div>
+    <div class="radis"></div>
+    <div class="yuan"></div>
+    <div class="over">
+
+        曹芷馨是因北京抗议活动而被拘留的女性之一。在她的一些朋友被拘后，曹芷馨在一位律师的建议下录制了一段视频。她明确表示，如果自己也被拘留，她希望名字被公布出来。在曹芷馨被带走后，这段视频被她的朋友公之于众，这一决定权因而不再在她家人手中。当局指控曹芷馨犯有“寻衅滋事罪”，根据中国法律，她可能因此面临长达10年的刑期。
+
+人权组织以及许多活动人士和律师认为，公众的关注，包括来自媒体的关注，可能有助于让被拘留者在狱中的日子好过一点，但他们表示，这些关注不太可能影响法律结果，如取保候审或量刑。
+
+身在美国的中国人权律师陆妙卿说，“发声不会使被拘留者的处境变得更糟。”这一评估是基于被释放活动人士、陆妙卿和其他人的反馈得出，其中也包括去年11月抗议活动后在中国各地被拘留的一些人，这些人对公众在他们失去自由时的支持表示感谢。
+
+其他人则认为，关注并不总是有益的。一个担忧在于，有关部门可能会对异见人士的代理律师施压。一些活动人士说，在过去一些备受瞩目的案件中，有关部门有时会强迫被拘留者解雇自己请的律师，并指定由执法部门批准的代理律师。
+    </div>
+
+    <div class="v">111111111111</div>
+    <div class="bg"></div>
+    <div class="trans"></div>
+</body>
+</html>
