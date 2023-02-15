@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            display: flex;
+            /* 这里要使用百分比 效果比较明显 */
+            width: 60%;
+            height: 150px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        section div:nth-child(1){
+            width: 200px;
+            height: 150px;
+            background-color: aqua;
+        }
+
+        section div:nth-child(2){
+            /* 
+            这样的话两边固定 中间可以伸缩
+            直接使用子项flex表示剩余位置都让第二个div用 
+            */
+            flex: 1;
+            background-color: aliceblue;
+        }
+        section div:nth-child(3){
+            width: 200px;
+            height: 150px;
+            background-color: red;
+        }
+        p{
+            display: flex;
+            /* 这里要使用百分比 效果比较明显 */
+            width: 60%;
+            height: 150px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        p span{
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 两边固定 中间适配 -->
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <!-- 平均三分 -->
+    <p>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </p>
+</body>
+</html>

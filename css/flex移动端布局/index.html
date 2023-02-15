@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            background-color: pink;
+            /* 给父级添加flex属性 */
+            display: flex;
+            /* 
+            主轴方向 默认为row 
+            元素跟着主轴排列 
+            */
+            flex-direction: row;
+
+            /* 
+            主轴方向的子元素排列方式
+            flex-start：从头开始
+            flex-end：从尾开始
+            center:居中对齐    
+            space-around:平分剩余的空间
+            space-between:先两边贴边，再平分剩余空间（重要）
+            */
+            justify-content:center;
+            /* 换行 默认不换行 压缩宽度 */
+            flex-wrap: wrap;
+
+            /* 
+            设置侧轴的子元素排列方式（单行
+            侧轴居中 
+            */
+            /* align-items: center; */
+
+            /* 
+            设置侧轴的子元素排列方式（多行
+            */
+            align-content: space-between;
+        }
+        div span{
+            /* margin-top: 10px; */
+            width: 120px;
+            height: 100px;
+            background-color: purple;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+
+</body>
+</html>
