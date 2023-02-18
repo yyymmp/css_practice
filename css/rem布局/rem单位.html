@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        rem与flex: flex偏横向布局,纵向高度比较固定
+        而rem侧重宽高等比例缩放
+        */
+        html{
+            font-size: 14px;
+        }
+     
+        div{
+            font-size: 12px;
+        }
+        p{
+            /* 
+            1 em相对于父元素的字体大小来说的
+            */
+            /* width: 10em;
+            height: 10em; */
+
+            /* 
+            rem的基准是html元素的字体大小
+            */
+            width: 10rem;
+            height: 10rem;
+            background-color: #000;
+        }
+
+
+        @media screen and (max-width: 800px) {
+            body{
+                background-color: pink;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p></p>
+    </div>
+
+</body>
+</html>

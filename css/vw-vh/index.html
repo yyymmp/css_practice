@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        移动端布局: vw   pc端还是使用flex(使用px单位)
+        在之前的布局中,使用flex布局有一个缺点,就是文字大小无法改变,需要使用rem单位来辅佐
+        还有另外一种简单的方式,就算使用vw/vh,表示的是当前是视口的百分之一
+        1 vw = 1/100当前视口宽度
+
+        如何还原设计稿的尺寸 在一个375px的屏幕中,怎么使用vw来实现50px*50px
+        1vw = 375/100
+        那么50px就等于 (50/3.75)vw
+        另外,我们本质是根据视口宽度来等比例缩放页面元素高度和宽度的,所以使用vw就够用了  vh很少使用
+
+
+     -->
+    <style>
+        div{
+            width: 10.6667vw;
+            height: 10.6667vw;
+            background-color: aqua;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div></div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        rem适配原理: 先在标准设计稿下计算,如750px下,根字体大小设置为15px(750/50)
+        在320px下 ,根字体宽度设置为320/50
+        通过媒体查询获得设备宽度,使用rem做单位,当html字体大小变化时,元素尺寸也会发生变化
+     -->
+     <style>
+        @media screen and (min-width:320px) {
+            html{
+                font-size: 21.33px;
+            }
+        }
+        @media screen and (min-width:750px) {
+            html{
+                font-size: 50px;
+            }
+        }
+        /*750l宽度下  100*100  则100/50=2rem
+        页面元素的rem值 =  页面元素在750px下的px值/html根字体大小
+        
+        */
+        div{
+            width: 2rem;
+            height: 2rem;
+            background-color: aqua;
+        }
+     </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
